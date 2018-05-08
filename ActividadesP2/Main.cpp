@@ -61,30 +61,6 @@ void ownUser(std::map<std::string, int>& rank)
 	rank[name] = points;
 }
 
-void sortPlayers(std::map<std::string, int>& rank)
-{
-	std::map<std::string, int>::iterator it1 = rank.begin();
-	std::map<std::string, int>::iterator it2 = rank.begin();
-
-	std::map<std::string, int>::iterator itAux;
-	
-
-	for (; it1 != rank.end(); it1++)
-	{
-		for (; it2 != rank.end(); it2++)
-		{
-			if (it1->second < it2->second)
-			{
-				itAux = it1;
-				
-				it1 = it2;
-
-				it2 = itAux;
-			}
-		}
-		
-	}
-}
 
 void printRanking(std::map<std::string, int> rank)
 {
@@ -114,7 +90,7 @@ int main()
 	addPlayers(ranking);
 	ownUser(ranking);
 
-	sortPlayers(ranking);
+	
 
 	//printRanking(ranking);
 
