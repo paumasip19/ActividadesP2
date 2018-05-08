@@ -43,7 +43,7 @@ void addPlayersVectors(std::vector<player> rank2)
 
 	for (int i = 0; i < 4; i++)
 	{
-		player Player = { names[i], points[i]] };
+		player Player = { names[i], points[i] };
 		rank2.push_back(Player);
 	}
 }
@@ -73,11 +73,11 @@ void printRanking(std::map<std::string, int> rank)
 }
 void printRankingVectors(std::vector<player> rank2)
 {
-	std::vector<player>::iterator it;
+	std::vector<player>::iterator *it;
 
-	for (it = rank2.begin(); it != rank2.end(); it++)
+	for (*it = rank2.begin(); *it != rank2.end(); *it++)
 	{
-		std::cout << "Tenemos a " << it->name << " con " << it->points << " puntos. " << std::endl;
+		std::cout << "Tenemos a " << *it << " con " << *it << " puntos. " << std::endl;
 	}
 }
 
@@ -92,9 +92,10 @@ int main()
 
 	
 
-	printRanking(ranking);
+	//printRanking(ranking);
 
 	addPlayersVectors(ranking2);
+
 	printRankingVectors(ranking2);
 
 	system("pause");
