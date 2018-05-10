@@ -52,6 +52,20 @@ void InsertionSort(int a[], int length) {
 }
 
 bool isAscending(int a[], int length) {
-
+	int j;
+	for (int i = 0; i < length-1; i++) {
+		if (a[i] > a[i + 1]) {
+			return false;
+		}
+	}
+	return true;
 }
-
+bool isDescending(int a[], int length) {
+	int j;
+	for (int i = 0; i < length - 1; i++) {
+		if (a[i] < a[i + 1]) {
+			return false;
+		}
+	}
+	return true;
+}
