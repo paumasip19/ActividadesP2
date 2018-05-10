@@ -51,6 +51,10 @@ void InsertionSort(int a[], int length) {
 	}
 }
 
+bool isAscending(int a[], int length) {
+
+}
+
 void generate(int a[], int length)
 {
 	srand(time(NULL));
