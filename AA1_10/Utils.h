@@ -3,41 +3,45 @@
 #include <iostream>
 #include <time.h>
 
-int *generate(int length, int max)
+namespace utils
 {
-	srand(time(NULL));
-
-	int* dinAr;
-	dinAr = new int[length];
-
-	for (int i = 0; i < length; i++)
+	int *generate(int length, int max)
 	{
-		dinAr[i] = rand() % max;
+		srand(time(NULL));
+
+		int* dinAr;
+		dinAr = new int[length];
+
+		for (int i = 0; i < length; i++)
+		{
+			dinAr[i] = rand() % max;
+		}
+
+		return dinAr;
 	}
 
-	return dinAr;
-}
-
-int *generate(int length)
-{
-	srand(time(NULL));
-
-	int* dinAr;
-	dinAr = new int[length];
-
-	for (int i = 0; i < length; i++)
+	int *generate(int length)
 	{
-		dinAr[i] = rand() % 1000;
+		srand(time(NULL));
+
+		int* dinAr;
+		dinAr = new int[length];
+
+		for (int i = 0; i < length; i++)
+		{
+			dinAr[i] = rand() % 1000;
+		}
+
+		return dinAr;
 	}
 
-	return dinAr;
+	void print(int a[], int length)
+	{
+		for (int i = 0; i < length; i++)
+		{
+			std::cout << a[i] << " ";
+		}
+		std::cout << std::endl;
+	}
 }
 
-void print(int a[], int length)
-{
-	for (int i = 0; i < length; i++)
-	{
-		std::cout << a[i] << " ";
-	}
-	std::cout << std::endl;
-}

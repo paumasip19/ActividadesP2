@@ -3,69 +3,74 @@
 #include <iostream>
 #include <time.h>
 
-void BubbleSort(int a[], int length)
+namespace order
 {
-	int temp;
-	for (int i = 0; i < length; ++i)
+	void BubbleSort(int a[], int length)
 	{
-		for (int j = 0; j < (length - 1); ++j)
+		int temp;
+		for (int i = 0; i < length; ++i)
 		{
-			if (a[j] > a[j + 1])
+			for (int j = 0; j < (length - 1); ++j)
 			{
-				temp = a[j];
-				a[j] = a[j + 1];
-				a[j + 1] = temp;
+				if (a[j] > a[j + 1])
+				{
+					temp = a[j];
+					a[j] = a[j + 1];
+					a[j + 1] = temp;
+				}
 			}
 		}
 	}
-}
 
-void SelectionSort(int a[], int length) {
-	int minIndex, tmp;
-	for (int i = 0; i < length - 1; i++) 
-	{
-		minIndex = i;
-		for (int j = i + 1; j < length; j++) 
+	void SelectionSort(int a[], int length) {
+		int minIndex, tmp;
+		for (int i = 0; i < length - 1; i++)
 		{
-			if (a[j] < a[minIndex])minIndex = j;
-			if (minIndex != i) 
+			minIndex = i;
+			for (int j = i + 1; j < length; j++)
 			{
-				tmp = a[i];
-				a[i] = a[minIndex];
-				a[minIndex] = tmp;
+				if (a[j] < a[minIndex])minIndex = j;
+				if (minIndex != i)
+				{
+					tmp = a[i];
+					a[i] = a[minIndex];
+					a[minIndex] = tmp;
+				}
 			}
 		}
 	}
-}
 
-void InsertionSort(int a[], int length) {
-	int j, tmp;
-	for (int i = 1; i < length; i++) 
-	{
-		tmp = a[i];
-		for (j = i - 1; j >= 0 && a[j] > tmp; j--)
+	void InsertionSort(int a[], int length) {
+		int j, tmp;
+		for (int i = 1; i < length; i++)
 		{
-			a[j + 1] = a[j];
+			tmp = a[i];
+			for (j = i - 1; j >= 0 && a[j] > tmp; j--)
+			{
+				a[j + 1] = a[j];
+			}
+			a[j + 1] = tmp;
 		}
-		a[j + 1] = tmp;
+	}
+
+	bool isAscending(int a[], int length) {
+		int j;
+		for (int i = 0; i < length - 1; i++) {
+			if (a[i] > a[i + 1]) {
+				return false;
+			}
+		}
+		return true;
+	}
+
+	bool isDescending(int a[], int length) {
+		int j;
+		for (int i = 0; i < length - 1; i++) {
+			if (a[i] < a[i + 1]) {
+				return false;
+			}
+		}
+		return true;
 	}
 }
 
-bool isAscending(int a[], int length) {
-	int j;
-	for (int i = 0; i < length-1; i++) {
-		if (a[i] > a[i + 1]) {
-			return false;
-		}
-	}
-	return true;
-}
-bool isDescending(int a[], int length) {
-	int j;
-	for (int i = 0; i < length - 1; i++) {
-		if (a[i] < a[i + 1]) {
-			return false;
-		}
-	}
-	return true;
-}
