@@ -1,4 +1,8 @@
 #pragma once
+
+#include<time.h>
+#include<iostream>
+
 void BubbleSort(int a[], int length)
 {
 	int temp;
@@ -15,6 +19,7 @@ void BubbleSort(int a[], int length)
 		}
 	}
 }
+
 void SelectionSort(int a[], int length) {
 	int minIndex, tmp;
 	for (int i = 0; i < length - 1; i++) {
@@ -29,6 +34,7 @@ void SelectionSort(int a[], int length) {
 		}
 	}
 }
+
 void InsertionSort(int a[], int length) {
 	int j, tmp;
 	for (int i = 1; i < length; i++) {
@@ -37,8 +43,6 @@ void InsertionSort(int a[], int length) {
 		a[j + 1] = tmp;
 	}
 }
-
-
 
 void generate(int a[], int length)
 {
