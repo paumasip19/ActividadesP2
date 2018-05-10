@@ -31,3 +31,27 @@ int binarySearch(int a[], int length, int value)
 	}
 	return -1;
 }
+
+int *linearSearchIndexes(int a[], int length, int value) {
+
+	int j = 0;
+
+	for (int i = 0; i < length; i++) {
+		if (value == a[i])
+		{
+			j++;
+		}
+	}
+
+	int* indexAr;
+	indexAr = new int[j];
+
+	for (int i, k = 0; i < length; i++) {
+		if (value == a[i]) 
+		{
+			indexAr[k] == i;
+			k++;
+		}
+	}
+	return indexAr;
+}
